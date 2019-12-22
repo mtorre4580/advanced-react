@@ -20,7 +20,7 @@
 </style>
 
 		<meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="1KY+VXwvpWh9t9081/ohudyiMVp01T8Z4hOafI3A4Rm3zbmtbf7qUv+6b5e+XKiewIpx58TSR5WRTENPJzfd9Q==" />
+<meta name="csrf-token" content="F81jIqtAY3ypTDRRxropG58Rn+MTvy1Q2hgrnl3Zhcp0puTaupEsRitBhvqvHKA8gznfXqO4VdypR/Kt9y65Jg==" />
 		<style id="user-css-output" type="text/css"></style>
 	</head>
 	<body>
@@ -621,7 +621,52 @@ export default compose(
 </div></div>
 <div class="sl-block" data-block-type="text" data-block-id="a8e5b0d02b688dc2e5178cb4090f488f" style="height: auto; width: 600px; left: 160px; top: 591px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
 <p><a href="https://github.com/acdlite/recompose" target="_blank">https://github.com/acdlite/recompose</a></p>
-</div></div></section><section data-id="63141cfb53c4106a28159c775f90dab6"><div class="sl-block" data-block-type="text" style="height: auto; width: 748.025px; left: 38.9786px; top: 23.2558px;" data-block-id="518c9e48ecfb7bf6414da3bb403a5ad5"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;" dir="ui">
+</div></div></section><section data-id="82e27d4bd2ea7d9612914d2db8dda5de"><div class="sl-block" data-block-type="text" style="height: auto; width: 748.025px; left: 38.9786px; top: 23.2558px;" data-block-id="d768ca3ebbf4242b1a6a2e6dd82538b3"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;" dir="ui">
+<h2 style="text-align:left">Composition in React</h2>
+</div></div>
+
+<div class="sl-block" data-block-type="code" data-block-id="d099988e243e70b172ee5d93a773d62b" style="width: 909.015px; height: 379.206px; left: 38.9786px; top: 140px;"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 11;"><pre class="javascript"><code data-line-numbers="">import React from "react";
+import ReactDOM from "react-dom";
+import { Button, addLegend, addTracking } from "./button";
+
+const ButtonWithLegendAndTrack = addTracking(addLegend(Button));
+
+function App() {
+  return (
+    &lt;div className="App"&gt;
+
+      &lt;ButtonWithLegend 
+    	title="Enviar" 
+    	msg="Recibirás un email para confirmar" 
+    	track={{ view: "home", data: { item: { id: 33 } } }} /&gt;
+
+      &lt;Button title="Enviar" /&gt;
+    &lt;/div&gt;
+  );
+}</code></pre></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="0302b98e57c9ba487154473e1ed5b9ac" style="height: auto; width: 600px; left: 187.004px; top: 578.306px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<p>Any issues??  <strong>is static</strong></p>
+</div></div></section><section data-id="de221ae6194702fb8bfe9515e2f8fa7a"><div class="sl-block" data-block-type="text" style="height: auto; width: 748.025px; left: 38.9786px; top: 23.2558px;" data-block-id="f44c83f981153b9af96b7bff75fbd332"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;" dir="ui">
+<h2 style="text-align:left">Render props</h2>
+</div></div>
+
+<div class="sl-block" data-block-type="text" data-block-id="f0d839b9849d23d8e65135e5bde1e899" style="height: auto; width: 876.572px; left: 65.2494px; top: 140px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<p style="text-align: left;"><span style="text-align:start">Una render prop es una prop que recibe una función que un componente utiliza para saber qué renderizar</span></p>
+</div></div>
+<div class="sl-block" data-block-type="code" data-block-id="ea4cf4cf043e763d5e95b66075a67b58" style="width: 800px; height: 302.597px; left: 80px; top: 280px;"><div class="sl-block-content notranslate" data-highlight-theme="monokai" data-code-frame="none" style="z-index: 12;"><pre class="javascript"><code data-line-numbers="">&lt;InfiniteLoader
+  isItemLoaded={isItemLoaded}
+  itemCount={itemCount}
+  loadMoreItems={loadMoreItems}
+&gt;
+  {({ onItemsRendered, ref }) =&gt; (
+    &lt;FixedSizeList
+      itemCount={itemCount}
+      onItemsRendered={onItemsRendered}
+      ref={ref}
+      {...otherListProps}
+    /&gt;
+  )}
+&lt;/InfiniteLoader&gt;</code></pre></div></div></section><section data-id="63141cfb53c4106a28159c775f90dab6"><div class="sl-block" data-block-type="text" style="height: auto; width: 748.025px; left: 38.9786px; top: 23.2558px;" data-block-id="518c9e48ecfb7bf6414da3bb403a5ad5"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;" dir="ui">
 <h2 style="text-align:left">Code guide</h2>
 </div></div>
 <div class="sl-block" data-block-type="text" data-block-id="e549ed8695fbce1ca6a792b94496a6da" style="height: auto; width: 651.679px; left: 80px; top: 140px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
@@ -638,7 +683,7 @@ export default compose(
 <div class="sl-block" data-block-type="text" style="height: auto; width: 606.098px; left: 166.615px; top: 132px;" data-block-id="49abb532fb6cb58fb2b256b1ab0b3288"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
 <p>Es una función que se puede pausar y continuar donde se quedó</p>
 </div></div>
-<div class="sl-block" data-block-type="image" style="width: 806.4px; height: 453.6px; left: 66.464px; top: 224.466px;" data-block-id="a60942b3c9f43524d79cef690f5396f4"><div class="sl-block-content" style="z-index: 12;"><img data-natural-width="1920" data-natural-height="1080" style="" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/1231566/images/6912694/gener.png"></div></div></section><section data-id="c14a2e3944352f03577e07e9d0cd5e32"><div class="sl-block" data-block-type="text" style="height: auto; width: 748.025px; left: 38.9786px; top: 23.2558px;" data-block-id="3f9311d56d6a9ca4293f5ca32792774e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;" dir="ui">
+<div class="sl-block" data-block-type="image" style="width: 806.4px; height: 453.6px; left: 66.464px; top: 224.466px; min-width: 1px; min-height: 1px;" data-block-id="a60942b3c9f43524d79cef690f5396f4"><div class="sl-block-content" style="z-index: 12;"><img data-natural-width="1920" data-natural-height="1080" style="" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/1231566/images/6912694/gener.png"></div></div></section><section data-id="c14a2e3944352f03577e07e9d0cd5e32"><div class="sl-block" data-block-type="text" style="height: auto; width: 748.025px; left: 38.9786px; top: 23.2558px;" data-block-id="3f9311d56d6a9ca4293f5ca32792774e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;" dir="ui">
 <h2 style="text-align:left">What??</h2>
 </div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; width: 843.824px; left: 58.088px; top: 140px;" data-block-id="43349ca7ff1c6ff2a8b2d6148d9eaad8"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
@@ -648,16 +693,16 @@ export default compose(
 
 <p>Le pagás al delivery, volves y seguís leyendo donde te quedaste.</p>
 </div></div>
-<div class="sl-block" data-block-type="image" style="width: 398.596px; height: 265.518px; left: 531.276px; top: 420px;" data-block-id="0cd0976b6919d2cdec219186ecb68457"><div class="sl-block-content" style="z-index: 12;"><img data-natural-width="626" data-natural-height="417" style="" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/1231566/images/6912696/reading.jpg"></div></div></section><section data-id="0718596a12ad9821f36bf26cb1517914"><div class="sl-block" data-block-type="text" style="height: auto; width: 748.025px; left: 38.9786px; top: 23.2558px;" data-block-id="c0525df8949ec919c7642e1a50b9d2e1"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;" dir="ui">
+<div class="sl-block" data-block-type="image" style="width: 398.596px; height: 265.518px; left: 531.276px; top: 420px; min-width: 1px; min-height: 1px;" data-block-id="0cd0976b6919d2cdec219186ecb68457"><div class="sl-block-content" style="z-index: 12;"><img data-natural-width="626" data-natural-height="417" style="" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/1231566/images/6912696/reading.jpg"></div></div></section><section data-id="0718596a12ad9821f36bf26cb1517914"><div class="sl-block" data-block-type="text" style="height: auto; width: 748.025px; left: 38.9786px; top: 23.2558px;" data-block-id="c0525df8949ec919c7642e1a50b9d2e1"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;" dir="ui">
 <h2 style="text-align:left">Explanation</h2>
 </div></div>
 
-<div class="sl-block" data-block-type="image" style="width: 720px; height: 530.775px; left: 120px; top: 140px;" data-block-id="fd094767e9e7892fddaffa36a829e9fb"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="761" data-natural-height="561" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/1231566/images/6912697/generator-Ex.png"></div></div></section><section data-id="2a0dba0912c4d688615386fbe6d044b0"><div class="sl-block" data-block-type="text" style="height: auto; width: 748.025px; left: 38.9786px; top: 23.2558px;" data-block-id="95af36ba8f4e9864000a5ce907632edb"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;" dir="ui">
+<div class="sl-block" data-block-type="image" style="width: 720px; height: 530.775px; left: 120px; top: 140px; min-width: 1px; min-height: 1px;" data-block-id="fd094767e9e7892fddaffa36a829e9fb"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="761" data-natural-height="561" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/1231566/images/6912697/generator-Ex.png"></div></div></section><section data-id="2a0dba0912c4d688615386fbe6d044b0"><div class="sl-block" data-block-type="text" style="height: auto; width: 748.025px; left: 38.9786px; top: 23.2558px;" data-block-id="95af36ba8f4e9864000a5ce907632edb"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;" dir="ui">
 <h2 style="text-align:left">Async / Await</h2>
 </div></div>
 
-<div class="sl-block" data-block-type="image" style="width: 413.782px; height: 657.184px; left: 525.767px; top: 21.408px;" data-block-id="cc4ecc1f7e5d2b1ef1d200bac7bb1b14"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="850" data-natural-height="1350" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/1231566/images/6912700/bbabel.png"></div></div>
-<div class="sl-block" data-block-type="image" style="width: 467.667px; height: 322.85px; left: 29.2106px; top: 199.827px;" data-block-id="5365f4f84fd730acf3a8753aa11c56ce"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="704" data-natural-height="486" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/1231566/images/6912699/asnc.png"></div></div></section><section data-id="1cb2b7f30fb1c990001e2fbc99aaa625"><div class="sl-block" data-block-type="text" style="height: auto; width: 748.025px; left: 38.9786px; top: 23.2558px;" data-block-id="35eb6cbc752879812f0bc3a72ddbf7a8"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;" dir="ui">
+<div class="sl-block" data-block-type="image" style="width: 413.782px; height: 657.184px; left: 525.767px; top: 21.408px; min-width: 1px; min-height: 1px;" data-block-id="cc4ecc1f7e5d2b1ef1d200bac7bb1b14"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="850" data-natural-height="1350" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/1231566/images/6912700/bbabel.png"></div></div>
+<div class="sl-block" data-block-type="image" style="width: 467.667px; height: 322.85px; left: 29.2106px; top: 199.827px; min-width: 1px; min-height: 1px;" data-block-id="5365f4f84fd730acf3a8753aa11c56ce"><div class="sl-block-content" style="z-index: 12;"><img style="" data-natural-width="704" data-natural-height="486" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/1231566/images/6912699/asnc.png"></div></div></section><section data-id="1cb2b7f30fb1c990001e2fbc99aaa625"><div class="sl-block" data-block-type="text" style="height: auto; width: 748.025px; left: 38.9786px; top: 23.2558px;" data-block-id="35eb6cbc752879812f0bc3a72ddbf7a8"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;" dir="ui">
 <h2 style="text-align:left">Example</h2>
 </div></div>
 
@@ -682,7 +727,7 @@ var print = (render, text, timeout) =&gt; {
 <h2 style="text-align:left">In React</h2>
 </div></div>
 
-<div class="sl-block" data-block-type="image" style="width: 800px; height: 167px; left: 80px; top: 140px;" data-block-id="7679110a92fc13b33768aaaca62e6d37"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="800" data-natural-height="167" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/1231566/images/6912698/sagas.png"></div></div>
+<div class="sl-block" data-block-type="image" style="width: 800px; height: 167px; left: 80px; top: 140px; min-width: 1px; min-height: 1px;" data-block-id="7679110a92fc13b33768aaaca62e6d37"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="800" data-natural-height="167" data-lazy-loaded="" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/1231566/images/6912698/sagas.png"></div></div>
 <div class="sl-block" data-block-type="text" data-block-id="9bc67a1229480eb98b6abf1a5a986254" style="height: auto; width: 600px; left: 180px; top: 350px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
 <p><span style="color:rgb(51, 51, 51); text-align:start">Is a redux middleware, which means this thread can be started, paused and cancelled from the main application with normal redux actions, it has access to the full redux application state and it can dispatch redux actions as well.</span></p>
 </div></div></section><section data-id="f3c728c3d37e3c21a76fbd93f1d0adf8"><div class="sl-block" data-block-type="text" style="height: auto; width: 748.025px; left: 32.5187px; top: 9.04391px;" data-block-id="cc1f3756527eb4eef125cb94c9b018b1"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;" dir="ui">
@@ -733,7 +778,7 @@ export default { watchSearchingItems, watchFetchingDetailItem };</code></pre></d
 
 		
 <script>
-	var SLConfig = {"current_user":{"id":1231566,"username":"matiastorre","name":"Matias Torre","description":null,"thumbnail_url":"//graph.facebook.com/v2.6/2811605988900927/picture","paid":false,"pro":false,"lite":false,"team_id":null,"settings":{"id":4567252,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null,"editor_grid":true,"editor_grid_on_top":false,"editor_snap":true,"editor_fixed_notes":false,"developer_mode":false,"speaker_layout":null,"speaker_theme":null,"phone_number":null,"phone_country_code":null,"media_sources":null,"export_controls":null,"export_slide_number":null,"export_slide_notes":null,"export_separate_fragments":null},"email":"mtorre4580@outlook.com","notify_on_receipt":true,"billing_address":null,"billing_vat_id":null,"editor_tutorial_completed":true,"manually_upgraded":false,"deck_user_editor_limit":null,"storage_used":12460727,"storage_limit":262144000},"deck":{"id":1678293,"slug":"react-advanced-concepts","title":"React Advanced Concepts","description":"","width":960,"height":700,"visibility":"all","published_at":"2019-12-21T05:09:37.149Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/190e5dee625519590992fdbef9f8296c/thumb.jpg?1576967621","view_count":0,"user":{"id":1231566,"username":"matiastorre","name":"Matias Torre","description":null,"thumbnail_url":"//graph.facebook.com/v2.6/2811605988900927/picture","paid":false,"pro":false,"lite":false,"team_id":null,"settings":{"id":4567252,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}},"background_transition":"slide","transition":"slide","theme_id":null,"theme_font":"montserrat","theme_color":"white-blue","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":true,"rolling_links":false,"center":false,"shuffle":null,"should_loop":false,"share_notes":null,"slide_number":null,"slide_count":37,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":null,"data_updated_at":1576967620964,"font_typekit":null,"font_google":null,"time_limit":null,"upsizing_enabled":null,"notes":{}},"user":{"id":1231566,"username":"matiastorre","name":"Matias Torre","description":null,"thumbnail_url":"//graph.facebook.com/v2.6/2811605988900927/picture","paid":false,"pro":false,"lite":false,"team_id":null,"settings":{"id":4567252,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}}};
+	var SLConfig = {"current_user":{"id":1231566,"username":"matiastorre","name":"Matias Torre","description":null,"thumbnail_url":"//graph.facebook.com/v2.6/2811605988900927/picture","paid":false,"pro":false,"lite":false,"team_id":null,"settings":{"id":4567252,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null,"editor_grid":true,"editor_grid_on_top":false,"editor_snap":true,"editor_fixed_notes":false,"developer_mode":false,"speaker_layout":null,"speaker_theme":null,"phone_number":null,"phone_country_code":null,"media_sources":null,"export_controls":null,"export_slide_number":null,"export_slide_notes":null,"export_separate_fragments":null},"email":"mtorre4580@outlook.com","notify_on_receipt":true,"billing_address":null,"billing_vat_id":null,"editor_tutorial_completed":true,"manually_upgraded":false,"deck_user_editor_limit":null,"storage_used":12460727,"storage_limit":262144000},"deck":{"id":1678293,"slug":"react-advanced-concepts","title":"React Advanced Concepts","description":"","width":960,"height":700,"visibility":"all","published_at":"2019-12-21T05:09:37.149Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/190e5dee625519590992fdbef9f8296c/thumb.jpg?1576967621","view_count":0,"user":{"id":1231566,"username":"matiastorre","name":"Matias Torre","description":null,"thumbnail_url":"//graph.facebook.com/v2.6/2811605988900927/picture","paid":false,"pro":false,"lite":false,"team_id":null,"settings":{"id":4567252,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}},"background_transition":"slide","transition":"slide","theme_id":null,"theme_font":"montserrat","theme_color":"white-blue","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":true,"rolling_links":false,"center":false,"shuffle":null,"should_loop":false,"share_notes":null,"slide_number":null,"slide_count":39,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":null,"data_updated_at":1576977194595,"font_typekit":null,"font_google":null,"time_limit":null,"upsizing_enabled":null,"notes":{}},"user":{"id":1231566,"username":"matiastorre","name":"Matias Torre","description":null,"thumbnail_url":"//graph.facebook.com/v2.6/2811605988900927/picture","paid":false,"pro":false,"lite":false,"team_id":null,"settings":{"id":4567252,"present_controls":true,"present_upsizing":true,"present_pointer":false,"present_notes":true,"default_deck_tag_id":null}}};
 </script>
 
 		<script>

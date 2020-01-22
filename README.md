@@ -1,5 +1,9 @@
 # advanced-react
 
-Conceptos avanzados de react (programación funcional)
+Conceptos avanzados de JS / React 
 
-Site https://mtorre4580.github.io/advanced-react/#/ 
+Inmutabilidad
+Programación Funcional
+Generators / Iterators
+
+Site https://mtorre4580.github.io/advanced-react 
